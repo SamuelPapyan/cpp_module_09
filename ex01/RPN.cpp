@@ -17,10 +17,10 @@
 std::stack<RPN::token_type> RPN::stack_;
 
 const struct RPN::operations RPN::operations_[op_size] = {
-	{ '+', &RPN::opSum },
-	{ '-', &RPN::opSub },
-	{ '*', &RPN::opMul },
-	{ '/', &RPN::opDiv }
+	{'+', &RPN::opSum},
+	{'-', &RPN::opSub},
+	{'*', &RPN::opMul},
+	{'/', &RPN::opDiv}
 };
 
 RPN::result_type RPN::resolveExpression(const std::string &line)

@@ -28,7 +28,7 @@ BitcoinExchange::BitcoinExchange(const std::string &filename) {
                     << line << '\n';
             continue;
         }
-        std::stirng date = line.substr(0, delimiter_pos);
+        std::string date = line.substr(0, delimiter_pos);
         std::string rate_str = line.substr(delimiter_pos + 1);
 
         double rate;
@@ -38,7 +38,7 @@ BitcoinExchange::BitcoinExchange(const std::string &filename) {
                     << rate_str << "\n";
             continue;
         }
-        date_[date] = rate;
+        data_[date] = rate;
     }
 }
 
@@ -60,14 +60,14 @@ bool    BitcoinExchange::validateDate(const std::string& date) {
     if (del1 == std::string::npos || del1 == del2)
         return false;
 
-    str::string year_str = date.substr(0, del1);
+    std::string year_str = date.substr(0, del1);
     std::string month_str = date.substr(del1 + 1, del2 - del1 - 1);
     std::string day_str = date.substr(del2 + 1);
 
     int year, month, day;
     std::istringstream year_ss(year_str), month_ss(month_str), day_ss(day_str);
 
-    if (!(year_ss >> year) || !(month_ss >> month) || !(dat_ss >> day))
+    if (!(year_ss >> year) || !(month_ss >> month) || !(day_ss >> day))
         return false;
     
     if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)

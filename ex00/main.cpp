@@ -16,7 +16,7 @@
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         std::cerr << "Error: Invalid number of arguments.\n";
-        std::cerr << "Usage: " << argv[0] << "[input_file]\n";
+        std::cerr << "Usage: " << argv[0] << " [input_file]\n";
         return 1;
     }
 
