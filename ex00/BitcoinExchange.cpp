@@ -6,7 +6,7 @@
 /*   By: spapyan <spapyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:30:29 by spapyan           #+#    #+#             */
-/*   Updated: 2023/08/04 15:30:29 by spapyan          ###   ########.fr       */
+/*   Updated: 2023/08/07 20:17:58 by spapyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 BitcoinExchange::BitcoinExchange(const std::string &filename) {
     std::ifstream file(filename.c_str());
+    if (file.is_open() == false) {
+        throw std::runtime_error("Error: " + filename + " can not be opened");
+    }
     std::string line;
     std::getline(file, line);
     while (std::getline(file, line)) {
@@ -98,6 +101,9 @@ bool    BitcoinExchange::validateValue(const double &value) {
 
 void    BitcoinExchange::processInput(const std::string &filename) {
     std::ifstream file(filename.c_str());
+    if (file.is_open() == false) {
+        throw std::runtime_error("Error: " + filename + " can not be opened");
+    }
     std::string line;
     std::getline(file, line);
     while (std::getline(file, line)) {

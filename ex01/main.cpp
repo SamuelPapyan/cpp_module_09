@@ -6,7 +6,7 @@
 /*   By: spapyan <spapyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:20:48 by spapyan           #+#    #+#             */
-/*   Updated: 2023/08/04 16:20:48 by spapyan          ###   ########.fr       */
+/*   Updated: 2023/08/07 20:26:31 by spapyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "RPN.hpp"
 
 int main(int argc, char *argv[]) {
-    if (argc != 2) {
+    if (argc != 2 || std::string(argv[1]).empty()) {
         std::cerr << "Usage: " << argv[0] << " \"OPERATION\"\n";
         return 1;
     }
